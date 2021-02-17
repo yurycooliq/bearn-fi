@@ -4,7 +4,7 @@
   "description": "Check bearn.fi balance and rewards",
   "main": "index.js",
   "scripts": {
-    "mdo-usdt": "node mdo-usdt.js"
+    "mdo-usdt": "node src/mdo-usdt.js"
   },
   "author": "Yury Cooliq <yurycooliq@gmail.com>",
   "license": "WTFPL",
