@@ -25,7 +25,7 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, t
     console.log(`Result (${name}):\n-------------------------------------------------------------`)
     console.log(`LP token price: $${lpTokenPrice.toFixed(2)}`)
     console.log(`TVL (on Pancake): $${tvl.toFixed(2)}`)
-    console.log(`LP amount: ${amount} + (pending) ${unclaimed} = ${total} Cake LP`)
-    console.log(`Your LP's cost $${(total * lpTokenPrice).toFixed(2)}`)
+    console.log(`LP amount: ${amount} + ${unclaimed} (pending) = ${total} Cake LP`)
+    console.log(`Your LP's cost: $${(total * lpTokenPrice).toFixed(2)}`)
     console.log("-------------------------------------------------------------")
 }

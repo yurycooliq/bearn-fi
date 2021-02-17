@@ -20,8 +20,8 @@ Result (MDO-USDT):
 -------------------------------------------------------------
 LP token price: $7.11
 TVL (on Pancake): $898701.74
-LP amount: 10 + (pending) 0 = 10 Cake LP
-Your LP's cost $71.10
+LP amount: 10 + 0 (pending) = 10 Cake LP
+Your LP's cost: $71.10
 -------------------------------------------------------------
 ```
 
