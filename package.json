@@ -1,10 +1,10 @@
 {
-  "name": "mdo-usdt",
+  "name": "bearn-fi",
   "version": "1.0.0",
-  "description": "Check MDO-USDT balance and rewards",
+  "description": "Check bearn.fi balance and rewards",
   "main": "index.js",
   "scripts": {
-    "mdo-usdt": "node index.js"
+    "mdo-usdt": "node mdo-usdt.js"
   },
   "author": "Yury Cooliq <yurycooliq@gmail.com>",
   "license": "WTFPL",
