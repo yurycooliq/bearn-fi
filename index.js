@@ -1,7 +1,6 @@
 require('dotenv').config({})
 
 const { get, post } = require('axios')
-const BN = require('bn.js')
 const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const poolABI = require('./abis/pool.json')
