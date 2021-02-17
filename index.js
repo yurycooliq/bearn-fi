@@ -46,7 +46,7 @@ const calcDepo = async () => {
     result.vault.amount = lpAmount
     result.vault.depo = lpAmount * result.pool.lpTokenPrice
     result.vault.unclaimedLP = await vault.methods.pendingReward("5", "1", user).call() / 1e18
-    result.vault.depoWithUnclaimed = result.vault.unclaimedLP * result.pool.lpTokenPrice + result.vault.depo
+    result.vault.depoWithUnclaimedi = result.vault.unclaimedLP * result.pool.lpTokenPrice + result.vault.depo
 }
 
 const init = async () => {
