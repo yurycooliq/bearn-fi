@@ -4,7 +4,7 @@
   "description": "Check MDO-USDT balance and rewards",
   "main": "index.js",
   "scripts": {
-    "script": "node index.js"
+    "mdo-usdt": "node index.js"
   },
   "author": "Yury Cooliq <yurycooliq@gmail.com>",
   "license": "WTFPL",
