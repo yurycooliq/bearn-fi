@@ -1,0 +1,35 @@
+[
+    { 
+        "poolAddress": "0xc5b0d73A7c0E4eaF66baBf7eE16A2096447f7aD6", 
+        "token1ID": "bdollar", 
+        "token2ID": "binance-usd", 
+        "poolID": 0, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 0, 
+        "name": "BDO-BUSD",
+        "deposit": 400
+    },
+    { 
+        "poolAddress": "0xD65F81878517039E39c359434d8D8bD46CC4531F", 
+        "token1ID": "midas-dollar", 
+        "token2ID": "binance-usd", 
+        "poolID": 4, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 0, 
+        "name": "MDO-BUSD", 
+        "deposit": 3000
+    },
+    { 
+        "poolAddress": "0xd245BDb115707730136F0459e2aa9b0b19023724", 
+        "token1ID": "midas-dollar", 
+        "token2ID": "tether", 
+        "poolID": 5, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 0, 
+        "name": "MDO-USDT", 
+        "deposit": 0
+    }
+]
