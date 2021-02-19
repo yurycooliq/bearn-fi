@@ -1,13 +1,25 @@
 # Bearn.fi Balance Checker
 
 ## Install
-Install Node.js and NPM, then clone this repository and run `npm i` and `cp .env.example .env`.
+Install [Node.js+NPM](https://nodejs.org/en/) and [GIT](https://git-scm.com/). Then run GIT Bash and execute following commands one by one:
+
+```
+git clone https://github.com/yurycooliq/bearn-fi.git
+cd bearn-fi
+npm i
+cp .env.example .env
+cp initial.balances.json.example initial.balances.json
+```
+
 In `.env` file set your address.
-Then `cp initial.balances.json.example initial.balances.json` and fill it with your initial balances in USD to see your profits.
+
+In `initial.balances.json` file set your initial balances in USD to see your profits in realtime.
+
+## Update
+Run `git pull` from `bearn-fi` directory, then update `initial.balances.json` with new values from `initial.balances.json.example` file.
 
 ## Usage
-
-Run `npm run watch`.
+Run `npm run watch` from `bearn-fi` directory.
 
 Available pools:
 
@@ -18,7 +30,7 @@ Available pools:
 - MDS-BUSD (coming soon)
 - SBDO-BUSD (coming soon)
 
-Expected output:
+Example output:
 ```
                                                            bearn.fi at 01:04:49                                                           
 ┌───────────┬────────────────┬───────────────┬───────────────┬──────────────────┬───────────┬──────────────┬──────────┬─────────┬────────┐
@@ -34,5 +46,6 @@ Expected output:
 ## Contribution
 Feel free to make pull request or contact me to add another vaults.
 
-#### Contributors
+## Contributors
+- Yury Cooliq <yurycooliq[at]gmail.com>
 - Paul Muller <melnyk300[at]gmail.com>
