@@ -10,6 +10,16 @@
         "name": "BDO-BUSD"
     },
     { 
+        "poolAddress": "0x74690f829fec83ea424ee1F1654041b2491A7bE9", 
+        "token1ID": "bdollar", 
+        "token2ID": "binancecoin", 
+        "poolID": 2, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 18, 
+        "name": "BDO-BNB"
+    },
+    { 
         "poolAddress": "0xD65F81878517039E39c359434d8D8bD46CC4531F", 
         "token1ID": "midas-dollar", 
         "token2ID": "binance-usd", 

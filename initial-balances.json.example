@@ -10,5 +10,9 @@
     {
         "name": "MDO-USDT",
         "balance": 0
+    },
+    {
+        "name": "BDO-BNB",
+        "balance": 0
     }
 ]

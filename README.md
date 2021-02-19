@@ -14,8 +14,8 @@ Available pools:
 - MDO-USDT
 - MDO-BUSD
 - BDO-BUSD
+- BDO-BNB
 - MDS-BUSD (coming soon)
-- BDO-BNB (coming soon)
 - SBDO-BUSD (coming soon)
 
 Expected output:
