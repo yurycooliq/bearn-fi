@@ -4,6 +4,10 @@
         "balance": 0
     },
     {
+        "name": "SBDO-BUSD",
+        "balance": 0
+    },
+    {
         "name": "MDO-BUSD",
         "balance": 0
     },
@@ -13,6 +17,10 @@
     },
     {
         "name": "BDO-BNB",
+        "balance": 0
+    },
+    {
+        "name": "MDS-BUSD",
         "balance": 0
     }
 ]

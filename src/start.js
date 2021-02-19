@@ -39,7 +39,7 @@ const flashLog = async lpTokensArray => {
                 { name: "lp_cost",          title: "LP cost",           alignment: "right",     color: "green" },
                 { name: "profit",           title: "Profit",            alignment: "right",     color: "green" }
             ],
-            // filter: row => +row.lp_amount > 0
+            filter: row => +row.lp_amount > 0
         })
 
         p.addRows(values)

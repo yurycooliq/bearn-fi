@@ -10,6 +10,16 @@
         "name": "BDO-BUSD"
     },
     { 
+        "poolAddress": "0xA0718093baa3E7AAE054eED71F303A4ebc1C076f", 
+        "token1ID": "bdollar-share", 
+        "token2ID": "binance-usd", 
+        "poolID": 1, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 0, 
+        "name": "SBDO-BUSD"
+    },
+    { 
         "poolAddress": "0x74690f829fec83ea424ee1F1654041b2491A7bE9", 
         "token1ID": "bdollar", 
         "token2ID": "binancecoin", 
@@ -38,5 +48,15 @@
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
         "name": "MDO-USDT"
+    },
+    { 
+        "poolAddress": "0x4925D290b22A9c19e126583a4dc858fBe909B014", 
+        "token1ID": "midas-dollar-share", 
+        "token2ID": "binance-usd", 
+        "poolID": 6, 
+        "rewardPoolID": 1, 
+        "token1PriceSource": 0, 
+        "token2PriceSource": 0, 
+        "name": "MDS-BUSD"
     }
 ]
