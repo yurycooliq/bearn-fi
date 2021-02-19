@@ -37,4 +37,4 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, t
     return info
 }
 
-const formatToDollarView = num => num.toLocaleString('en-US', {maximumFractionDigits: 2}) + '$'
+const formatToDollarView = num => '$' + num.toLocaleString('en-US', {maximumFractionDigits: 2})
