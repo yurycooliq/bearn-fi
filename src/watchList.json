@@ -8,7 +8,7 @@
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
         "name": "BDO-BUSD",
-        "deposit": 400
+        "deposit": 0
     },
     { 
         "poolAddress": "0xD65F81878517039E39c359434d8D8bD46CC4531F", 
@@ -19,7 +19,7 @@
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
         "name": "MDO-BUSD", 
-        "deposit": 3000
+        "deposit": 0
     },
     { 
         "poolAddress": "0xd245BDb115707730136F0459e2aa9b0b19023724", 
