@@ -28,6 +28,8 @@ const flashLog = async lpTokensArray => {
             columns: [
                 { name: "name",             title: "pair name",         alignment: "left" ,     color: "blue"  },
                 { name: "lp_token_price",   title: "LP token price",    alignment: "right",     color: "green" },
+                { name: "token1_price",     title: "token 1 price",     alignment: "right",     color: "green" },
+                { name: "token2_price",     title: "token 2 price",     alignment: "right",     color: "green" },
                 { name: "TVL",              title: "TVL",               alignment: "right",     color: "green" },
                 { name: "lp_amount",        title: "LP amount",         alignment: "right",     color: "green" },
                 { name: "lp_unclaimed",     title: "LP unclaimed",      alignment: "right",     color: "green" },
@@ -35,7 +37,7 @@ const flashLog = async lpTokensArray => {
                 { name: "lp_cost",          title: "LP cost",           alignment: "right",     color: "green" },
                 { name: "profit",           title: "profit",            alignment: "right",     color: "green" }
             ],
-            filter: row => +row.lp_amount > 0
+            // filter: row => +row.lp_amount > 0
         })
 
         p.addRows(values)
