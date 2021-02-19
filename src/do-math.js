@@ -19,8 +19,8 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, t
     const reserves      = await pool.methods.getReserves().call()
     const amount        = +(await vault.methods.stakedWantTokens(poolID, user).call())
     const unclaimed     = +(await vault.methods.pendingReward(poolID, rewardPoolID, user).call())
-    const lpTokenPrice = ((+reserves[0] * token1Price) + (+reserves[1] * token2Price)) / totalSupply
-    const tvl = lpTokenPrice * totalSupply
+    const lpTokenPrice  = ((+reserves[0] * token1Price) + (+reserves[1] * token2Price)) / totalSupply
+    const tvl           = lpTokenPrice * totalSupply
 
     const info = {}
     info.name           = name

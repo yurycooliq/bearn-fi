@@ -2,29 +2,36 @@
 
 ## Install
 Install Node.js and NPM, then clone this repository and run `npm i` and `cp .env.example .env`.
+In `.env` file set your address.
+Then `cp initial.balances.json.example initial.balances.json` and fill it with your initial balances in USD to see your profits.
 
 ## Usage
 
-First set your address in `.env` file, then run one of the following commands:
+Run `npm run watch`.
 
-- MDO-USDT: `npm run mdo-usdt`
-- MDO-BUSD: (coming soon)
-- MDS-BUSD: (coming soon)
-- BDO-BUSD: (coming soon)
-- BDO-BNB: (coming soon)
-- SBDO-BUSD: (coming soon)
+Available pools:
+
+- MDO-USDT
+- MDO-BUSD
+- BDO-BUSD
+- MDS-BUSD (coming soon)
+- BDO-BNB (coming soon)
+- SBDO-BUSD (coming soon)
 
 Expected output:
 ```
-Result (MDO-USDT):
--------------------------------------------------------------
-LP token price: $7.11
-TVL (on Pancake): $898701.74
-LP amount: 10 + 0 (pending) = 10 Cake LP
-Your LP's cost: $71.10
--------------------------------------------------------------
+                                          bearn.fi at 17:42:27                                           
+┌───────────┬────────────────┬────────────────┬────────────┬──────────────┬──────────┬─────────┬────────┐
+│ pair name │ LP token price │            TVL │  LP amount │ LP unclaimed │ LP total │ LP cost │ profit │
+├───────────┼────────────────┼────────────────┼────────────┼──────────────┼──────────┼─────────┼────────┤
+│ BDO-BUSD  │          2.25$ │ 27,543,237.08$ │ 286.301115 │     0.033459 │   286.33 │ 645.36$ │  4.36$ │
+│ MDO-BUSD  │          5.37$ │  1,612,385.95$ │          0 │            0 │        0 │      0$ │     0$ │
+│ MDO-USDT  │          5.31$ │    842,523.55$ │          0 │            0 │        0 │      0$ │     0$ │
+└───────────┴────────────────┴────────────────┴────────────┴──────────────┴──────────┴─────────┴────────┘
 ```
 
 ## Contribution
-Only MDO-USDT vault available at the moment.
 Feel free to make pull request or contact me to add another vaults.
+
+#### Contributors
+- Paul Muller <melnyk300[at]gmail.com>

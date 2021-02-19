@@ -1,6 +1,7 @@
 const Table = require("console-table-printer").Table
 const doMath = require('./do-math')
 const watchList = require('./watchList')
+const balances = require('./../initial-balances')
 
 const main = async () => {
     flashLog(watchList)
@@ -9,6 +10,7 @@ const main = async () => {
 
 const flashLog = async lpTokensArray => {
     const promises = lpTokensArray.map(tokenInfo => {
+        const deposit = balances.find(balance => balance.name === tokenInfo.name)
         return doMath(
             tokenInfo.poolAddress,
             tokenInfo.token1ID,
@@ -18,7 +20,7 @@ const flashLog = async lpTokensArray => {
             tokenInfo.token1PriceSource,
             tokenInfo.token2PriceSource,
             tokenInfo.name,
-            tokenInfo.deposit
+            deposit.balance
         ).catch(console.error)
     })
 
@@ -35,7 +37,7 @@ const flashLog = async lpTokensArray => {
                 { name: "lp_cost",          title: "LP cost",           alignment: "right",     color: "green" },
                 { name: "profit",           title: "profit",            alignment: "right",     color: "green" }
             ],
-            filter: row => +row.lp_amount > 0
+            // filter: row => +row.lp_amount > 0
         })
 
         p.addRows(values)

@@ -7,8 +7,7 @@
         "rewardPoolID": 1, 
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "BDO-BUSD",
-        "deposit": 400
+        "name": "BDO-BUSD"
     },
     { 
         "poolAddress": "0xD65F81878517039E39c359434d8D8bD46CC4531F", 
@@ -18,8 +17,7 @@
         "rewardPoolID": 1, 
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "MDO-BUSD", 
-        "deposit": 3000
+        "name": "MDO-BUSD"
     },
     { 
         "poolAddress": "0xd245BDb115707730136F0459e2aa9b0b19023724", 
@@ -29,7 +27,6 @@
         "rewardPoolID": 1, 
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "MDO-USDT", 
-        "deposit": 0
+        "name": "MDO-USDT"
     }
 ]
