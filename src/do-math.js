@@ -17,8 +17,8 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, t
     const token2Price   = +(await getPrice(token2ID, token2PriceSource))//$
     const totalSupply   = +(await pool.methods.totalSupply().call())
     const reserves      = await pool.methods.getReserves().call()
-    const amount        = +(await vault.methods.stakedWantTokens(poolID, user).call())
-    const unclaimed     = +(await vault.methods.pendingReward(poolID, rewardPoolID, user).call())
+    const amount        = +(await vault.methods.stakedWantTokens(poolID, user).call()) / 1e18
+    const unclaimed     = +(await vault.methods.pendingReward(poolID, rewardPoolID, user).call()) / 1e18
     const lpTokenPrice  = ((+reserves[0] * token1Price) + (+reserves[1] * token2Price)) / totalSupply
     const tvl           = lpTokenPrice * totalSupply
 
@@ -28,13 +28,17 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, t
     info.token1_price   = formatToDollarView(token1Price)
     info.token2_price   = formatToDollarView(token2Price)
     info.TVL            = formatToDollarView(tvl / 1e18),
-    info.lp_amount      = +(amount / 1e18).toFixed(6),
-    info.lp_unclaimed   = +(unclaimed / 1e18).toFixed(6),
-    info.lp_total       = +(info.lp_amount + info.lp_unclaimed).toFixed(2),
-    info.lp_cost        = formatToDollarView(info.lp_total * lpTokenPrice),
-    info.profit         = formatToDollarView(info.lp_total * lpTokenPrice - deposit) 
+    info.lp_amount      = amount.toFixed(6),
+    info.bdo_reward     = unclaimed.toFixed(6),
+    info.lp_cost        = formatToDollarView(amount * lpTokenPrice),
+    info.profit         = formatToDollarView(amount * lpTokenPrice - deposit) 
 
     return info
 }
 
-const formatToDollarView = num => '$' + num.toLocaleString('en-US', {maximumFractionDigits: 2})
+const formatToDollarView = num => {
+    const negative = num < 0
+    const symbol = negative ? "-$" : "$"
+    if (negative) num *= -1
+    return symbol + num.toLocaleString('en-US', {maximumFractionDigits: 2})
+}

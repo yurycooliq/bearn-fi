@@ -34,8 +34,7 @@ const flashLog = async lpTokensArray => {
                 { name: "token2_price",     title: "Token 2 price",     alignment: "right",     color: "green" },
                 { name: "TVL",              title: "TVL (on Pancake)",  alignment: "right",     color: "green" },
                 { name: "lp_amount",        title: "LP amount",         alignment: "right",     color: "green" },
-                { name: "lp_unclaimed",     title: "LP unclaimed",      alignment: "right",     color: "green" },
-                { name: "lp_total",         title: "LP total",          alignment: "right",     color: "green" },
+                { name: "bdo_reward",       title: "BDO reward",        alignment: "right",     color: "green" },
                 { name: "lp_cost",          title: "LP cost",           alignment: "right",     color: "green" },
                 { name: "profit",           title: "Profit",            alignment: "right",     color: "green" }
             ],
