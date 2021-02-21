@@ -4,7 +4,7 @@ const formatToDollarView = num => {
     const negative = num < 0
     const symbol = negative ? "-$" : "$"
     if (negative) num *= -1
-    return symbol + num.toLocaleString('en-US', {maximumFractionDigits: 2})
+    return symbol + num.toLocaleString('en-US', {maximumFractionDigits: 0}) + '.' + num.toFixed(2).split(".")[1]
 }
 
 const getPrice = async (tokenID, priceSource) => {
