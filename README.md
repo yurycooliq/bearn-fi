@@ -1,4 +1,5 @@
-# Bearn.fi Balance Checker
+# bEarn.fi Portfolio Tracker
+Console tool to track your portfolio on bEarn.fi.
 
 ## Install
 Install [Node.js+NPM](https://nodejs.org/en/) and [GIT](https://git-scm.com/). Then run GIT Bash and execute following commands one by one:
@@ -29,15 +30,20 @@ Available pools:
 - MDO-USDT
 - MDO-BUSD
 - MDS-BUSD
+- BREW
 
 Example output (only pools you are in):
 ```
-                                                           bearn.fi at 01:04:49                                                           
-┌───────────┬────────────────┬───────────────┬───────────────┬──────────────────┬───────────┬──────────────┬──────────┬─────────┬────────┐
-│ Pair name │ LP token price │ Token 1 price │ Token 2 price │ TVL (on Pancake) │ LP amount │ LP unclaimed │ LP total │ LP cost │ Profit │
-├───────────┼────────────────┼───────────────┼───────────────┼──────────────────┼───────────┼──────────────┼──────────┼─────────┼────────┤
-│ BDO-BUSD  │          $2.25 │         $1.17 │            $1 │   $27,192,336.98 │ 287.42613 │     0.305569 │   287.73 │ $646.19 │  $5.19 │
-└───────────┴────────────────┴───────────────┴───────────────┴──────────────────┴───────────┴──────────────┴──────────┴─────────┴────────┘
+                                           bEarn Portfolio Tracker at 04:15:04                                           
+┌───────────┬──────────────┬─────────────┬─────────────┬──────────────────┬────────────┬────────────┬─────────┬─────────┐
+│ Pair      │ LP token USD │ Token 1 USD │ Token 2 USD │ TVL (on Pancake) │  LP Amount │ BDO Reward │ LP Cost │  Profit │
+├───────────┼──────────────┼─────────────┼─────────────┼──────────────────┼────────────┼────────────┼─────────┼─────────┤
+│ BDO-BUSD  │        $2.27 │       $1.18 │       $1.01 │    $30,888,345.2 │ 291.827019 │   0.298050 │  $662.3 │   $21.3 │
+│ BDO-BNB   │        $37.6 │       $1.18 │     $275.29 │   $10,028,686.98 │  14.132797 │   0.959592 │ $531.44 │ -$46.92 │
+└───────────┴──────────────┴─────────────┴─────────────┴──────────────────┴────────────┴────────────┴─────────┴─────────┘
+URL: https://bearn.fi/bvaults
+Total LP Cost: $1,193.74
+Total Profit: -$25.62
 ```
 
 ## Contribution

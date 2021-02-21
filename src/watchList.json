@@ -3,60 +3,68 @@
         "poolAddress": "0xc5b0d73A7c0E4eaF66baBf7eE16A2096447f7aD6", 
         "token1ID": "bdollar", 
         "token2ID": "binance-usd", 
-        "poolID": 0, 
-        "rewardPoolID": 1, 
+        "poolID": 0,
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "BDO-BUSD"
+        "name": "BDO-BUSD",
+        "isSingle": false
     },
     { 
         "poolAddress": "0xA0718093baa3E7AAE054eED71F303A4ebc1C076f", 
         "token1ID": "bdollar-share", 
         "token2ID": "binance-usd", 
-        "poolID": 1, 
-        "rewardPoolID": 1, 
+        "poolID": 1,
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "SBDO-BUSD"
+        "name": "SBDO-BUSD",
+        "isSingle": false
     },
     { 
         "poolAddress": "0x74690f829fec83ea424ee1F1654041b2491A7bE9", 
         "token1ID": "bdollar", 
         "token2ID": "binancecoin", 
-        "poolID": 2, 
-        "rewardPoolID": 1, 
+        "poolID": 2,
         "token1PriceSource": 0, 
         "token2PriceSource": 18, 
-        "name": "BDO-BNB"
+        "name": "BDO-BNB",
+        "isSingle": false
+    },
+    { 
+        "poolAddress": "0x790Be81C3cA0e53974bE2688cDb954732C9862e1", 
+        "tokenID": "cafeswap-token", 
+        "poolID": 3,
+        "priceSource": 0,
+        "name": "BREW",
+        "isSingle": true
     },
     { 
         "poolAddress": "0xD65F81878517039E39c359434d8D8bD46CC4531F", 
         "token1ID": "midas-dollar", 
         "token2ID": "binance-usd", 
-        "poolID": 4, 
-        "rewardPoolID": 1, 
+        "poolID": 4,
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "MDO-BUSD"
+        "name": "MDO-BUSD",
+        "isSingle": false
     },
     { 
         "poolAddress": "0xd245BDb115707730136F0459e2aa9b0b19023724", 
         "token1ID": "midas-dollar", 
         "token2ID": "tether", 
-        "poolID": 5, 
-        "rewardPoolID": 1, 
+        "poolID": 5,
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "MDO-USDT"
+        "name": "MDO-USDT",
+        "isSingle": false
     },
     { 
         "poolAddress": "0x4925D290b22A9c19e126583a4dc858fBe909B014", 
         "token1ID": "midas-dollar-share", 
         "token2ID": "binance-usd", 
-        "poolID": 6, 
-        "rewardPoolID": 1, 
+        "poolID": 6,
         "token1PriceSource": 0, 
         "token2PriceSource": 0, 
-        "name": "MDS-BUSD"
+        "name": "MDS-BUSD",
+        "isSingle": false
     }
 ]

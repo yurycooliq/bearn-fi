@@ -22,5 +22,9 @@
     {
         "name": "MDS-BUSD",
         "balance": 0
+    },
+    {
+        "name": "BREW",
+        "balance": 0
     }
 ]
