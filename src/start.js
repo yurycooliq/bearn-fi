@@ -1,6 +1,6 @@
 const Table = require("console-table-printer").Table
-const formatToDollarView = require('./format')
-const doMath = require('./do-math')
+const { sumDollars } = require('./helpers')
+const doMath = require('./calcLP')
 const watchList = require('./watchList')
 const balances = require('./../initial-balances')
 
@@ -48,20 +48,8 @@ const flashLog = async lpTokensArray => {
         p.printTable()
 
         console.log("URL:", "https://bearn.fi/bvaults") // Clickable in most consoles
-
-        // Total LP in USD
-        const totals = values.map(value => {
-            return parseFloat(value.lp_cost.substring(1))
-        })
-        const total = totals.reduce((a, b) => a + b, 0)
-        console.log(`Total LP Cost: ${formatToDollarView(total)}`)
-
-        // Total Profit
-        const profits = values.map(value => {
-            return parseFloat(value.profit.replace('$', ''))
-        })
-        const profit = profits.reduce((a, b) => a + b, 0)
-        console.log(`Total Profit: ${formatToDollarView(profit)}`)
+        console.log(`Total LP Cost: ${sumDollars(values, "lp_cost")}`)
+        console.log(`Total Profit: ${sumDollars(values, "profit")}`)
     }).catch(console.log)
 }
 

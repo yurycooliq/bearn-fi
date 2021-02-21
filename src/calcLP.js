@@ -1,14 +1,8 @@
 require('dotenv').config({})
-const { get } = require('axios')
-const formatToDollarView = require('./format')
+const { formatToDollarView, getPrice } = require('./helpers')
 const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const user = process.env.USER_ADDRESS
-
-const getPrice = async (tokenID, priceSource) => {
-    const price = await get(`https://api.coingecko.com/api/v3/coins/${tokenID}/tickers`)
-    return price && price.data.tickers[priceSource].converted_last.usd
-}
 
 module.exports = async (poolAddress, token1ID, token2ID, poolID, rewardPoolID, token1PriceSource, token2PriceSource, name, deposit = 0) => {
     const pool = new web3.eth.Contract(require('./abis/pool.json'), poolAddress, web3)
