@@ -30,6 +30,7 @@ Available pools:
 - MDO-USDT
 - MDO-BUSD
 - MDS-BUSD
+- BREW
 
 Example output (only pools you are in):
 ```

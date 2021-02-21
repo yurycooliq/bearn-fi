@@ -1,6 +1,7 @@
 const Table = require("console-table-printer").Table
 const { sumDollars } = require('./helpers')
-const doMath = require('./calcLP')
+const calcLP = require('./calcLP')
+const calcSingle = require('./calcSingle')
 const watchList = require('./watchList')
 const balances = require('./../initial-balances')
 
@@ -12,12 +13,21 @@ const main = async () => {
 const flashLog = async lpTokensArray => {
     const promises = lpTokensArray.map(tokenInfo => {
         const deposit = balances.find(balance => balance.name === tokenInfo.name)
-        return doMath(
+        if (tokenInfo.isSingle) {
+            return calcSingle(
+                tokenInfo.poolAddress,
+                tokenInfo.tokenID,
+                tokenInfo.poolID,
+                tokenInfo.priceSource,
+                tokenInfo.name,
+                deposit.balance
+            )
+        }
+        return calcLP(
             tokenInfo.poolAddress,
             tokenInfo.token1ID,
             tokenInfo.token2ID,
             tokenInfo.poolID,
-            tokenInfo.rewardPoolID,
             tokenInfo.token1PriceSource,
             tokenInfo.token2PriceSource,
             tokenInfo.name,
