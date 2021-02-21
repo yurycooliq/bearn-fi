@@ -33,7 +33,7 @@
         "poolAddress": "0x790Be81C3cA0e53974bE2688cDb954732C9862e1", 
         "tokenID": "cafeswap-token", 
         "poolID": 3,
-        "priceSource": 0,
+        "priceSource": 1,
         "name": "BREW",
         "isSingle": true
     },

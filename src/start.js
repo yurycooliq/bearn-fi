@@ -43,7 +43,7 @@ const flashLog = async lpTokensArray => {
                 { name: "lp_token_price",   title: "LP token USD",      alignment: "right",     color: "green" },
                 { name: "token1_price",     title: "Token 1 USD",       alignment: "right",     color: "green" },
                 { name: "token2_price",     title: "Token 2 USD",       alignment: "right",     color: "green" },
-                { name: "TVL",              title: "TVL (on Pancake)",  alignment: "right",     color: "green" },
+                { name: "TVL",              title: "TVL*",  alignment: "right",     color: "green" },
                 { name: "lp_amount",        title: "LP Amount",         alignment: "right",     color: "green" },
                 { name: "bdo_reward",       title: "BDO Reward",        alignment: "right",     color: "green" },
                 { name: "lp_cost",          title: "LP Cost",           alignment: "right",     color: "green" },
@@ -56,6 +56,8 @@ const flashLog = async lpTokensArray => {
 
         console.clear()
         p.printTable()
+
+        console.log("* On PancakeSwap for pairs and CafeSwap for BREW\n")
 
         console.log("URL:", "https://bearn.fi/bvaults") // Clickable in most consoles
         console.log(`Total LP Cost: ${sumDollars(values, "lp_cost")}`)
