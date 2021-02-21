@@ -1,4 +1,5 @@
-# Bearn.fi Balance Checker
+# bEarn.fi Portfolio Tracker
+Console tool to track your portfolio on bEarn.fi.
 
 ## Install
 Install [Node.js+NPM](https://nodejs.org/en/) and [GIT](https://git-scm.com/). Then run GIT Bash and execute following commands one by one:

@@ -27,7 +27,7 @@ const flashLog = async lpTokensArray => {
 
     Promise.all(promises).then(values => {
         const p = new Table({
-            title: `bEarn Portfolio Tracker at ${(new Date).toLocaleTimeString()}`,
+            title: `bEarn.fi Portfolio Tracker at ${(new Date).toLocaleTimeString()}`,
             columns: [
                 { name: "name",             title: "Pair",              alignment: "left" ,     color: "cyan"  },
                 { name: "lp_token_price",   title: "LP token USD",      alignment: "right",     color: "green" },
