@@ -1,5 +1,5 @@
 const Table = require("console-table-printer").Table
-const { sumDollars } = require('./helpers')
+const { sumDollars, updatePrices } = require('./helpers')
 const calcLP = require('./calcLP')
 const calcSingle = require('./calcSingle')
 const watchList = require('./watchList')
@@ -11,6 +11,8 @@ const main = async () => {
 }
 
 const flashLog = async lpTokensArray => {
+    const prices = await updatePrices(lpTokensArray)
+
     const promises = lpTokensArray.map(tokenInfo => {
         const deposit = balances.find(balance => balance.name === tokenInfo.name)
         if (tokenInfo.isSingle) {
@@ -18,9 +20,9 @@ const flashLog = async lpTokensArray => {
                 tokenInfo.poolAddress,
                 tokenInfo.tokenID,
                 tokenInfo.poolID,
-                tokenInfo.priceSource,
                 tokenInfo.name,
-                deposit.balance
+                deposit.balance,
+                prices.data
             )
         }
         return calcLP(
@@ -28,10 +30,9 @@ const flashLog = async lpTokensArray => {
             tokenInfo.token1ID,
             tokenInfo.token2ID,
             tokenInfo.poolID,
-            tokenInfo.token1PriceSource,
-            tokenInfo.token2PriceSource,
             tokenInfo.name,
-            deposit.balance
+            deposit.balance,
+            prices.data
         ).catch(console.error)
     })
 
