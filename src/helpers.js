@@ -14,7 +14,7 @@ const getPrice = async (tokenID, priceSource) => {
 
 const sumDollars = (values, needle) => {
     const sum = values.map(value => {
-        return parseFloat(value[needle].replace('$', ''))
+        return parseFloat(value[needle].replace('$', '').replace(',', ''))
     })
     return formatToDollarView(sum.reduce((a, b) => a + b, 0))
 }
