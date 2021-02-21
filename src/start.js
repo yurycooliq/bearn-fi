@@ -40,9 +40,9 @@ const flashLog = async lpTokensArray => {
             title: `bEarn.fi Portfolio Tracker at ${(new Date).toLocaleTimeString()}`,
             columns: [
                 { name: "name",             title: "Pair",              alignment: "left" ,     color: "cyan"  },
-                { name: "lp_token_price",   title: "LP token USD",      alignment: "right",     color: "green" },
                 { name: "token1_price",     title: "Token 1 USD",       alignment: "right",     color: "green" },
                 { name: "token2_price",     title: "Token 2 USD",       alignment: "right",     color: "green" },
+                { name: "lp_token_price",   title: "LP token USD",      alignment: "right",     color: "green" },
                 { name: "TVL",              title: "TVL*",  alignment: "right",     color: "green" },
                 { name: "lp_amount",        title: "LP Amount",         alignment: "right",     color: "green" },
                 { name: "bdo_reward",       title: "BDO Reward",        alignment: "right",     color: "green" },
