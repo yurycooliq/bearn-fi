@@ -1,5 +1,5 @@
 const Table = require("console-table-printer").Table
-const { sumDollars, updatePrices } = require('./helpers')
+const { sumDollars, updatePrices, color, formatToDollarView, formatRow } = require('./helpers')
 const calcLP = require('./calcLP')
 const calcSingle = require('./calcSingle')
 const watchList = require('./watchList')
@@ -7,11 +7,12 @@ const balances = require('./../initial-balances')
 
 const main = async () => {
     flashLog(watchList)
-    setInterval(() => flashLog(watchList), 5000)
+    setInterval(() => flashLog(watchList), 3000)
 }
 
 const flashLog = async lpTokensArray => {
     const prices = await updatePrices(lpTokensArray)
+    const totals = {}
 
     const promises = lpTokensArray.map(tokenInfo => {
         const deposit = balances.find(balance => balance.name === tokenInfo.name)
@@ -22,7 +23,8 @@ const flashLog = async lpTokensArray => {
                 tokenInfo.poolID,
                 tokenInfo.name,
                 deposit.balance,
-                prices.data
+                prices.data,
+                totals
             )
         }
         return calcLP(
@@ -32,38 +34,38 @@ const flashLog = async lpTokensArray => {
             tokenInfo.poolID,
             tokenInfo.name,
             deposit.balance,
-            prices.data
+            prices.data,
+            totals
         ).catch(console.error)
     })
 
     Promise.all(promises).then(values => {
+        const formattedValues = values.map(formatRow)
         const p = new Table({
             title: `bEarn.fi Portfolio Tracker for ${process.env.USER_ADDRESS}`,
             columns: [
-                { name: "name",             title: "Pair",              alignment: "left" ,     color: "cyan"  },
-                { name: "token1_price",     title: "Token 1 USD | 24h change",       alignment: "right",     color: "green" },
-                { name: "token2_price",     title: "Token 2 USD | 24h change",       alignment: "right",     color: "green" },
-                { name: "lp_token_price",   title: "LP token USD",      alignment: "right",     color: "green" },
-                { name: "TVL",              title: "TVL*",              alignment: "right",     color: "green" },
-                { name: "lp_amount",        title: "LP Amount",         alignment: "right",     color: "green" },
-                { name: "bdo_reward",       title: "BDO Reward",        alignment: "right",     color: "green" },
-                { name: "lp_cost",          title: "LP Cost",           alignment: "right",     color: "green" },
-                { name: "profit",           title: "Profit",            alignment: "right",     color: "white_bold" }
+                { name: "name",             title: "Pair",                      alignment: "left" ,     },
+                { name: "token1_price",     title: "Token 1 USD | 24h change",  alignment: "right",     },
+                { name: "token2_price",     title: "Token 2 USD | 24h change",  alignment: "right",     },
+                { name: "lp_token_price",   title: "LP token USD",              alignment: "right",     },
+                { name: "TVL",              title: "TVL*",                      alignment: "right",     },
+                { name: "lp_amount",        title: "LP Amount",                 alignment: "right",     },
+                { name: "bdo_reward",       title: "BDO Reward",                alignment: "right",     },
+                { name: "lp_cost",          title: "LP Cost",                   alignment: "right",     },
+                { name: "profit",           title: "Profit",                    alignment: "right",     }
             ],
             // filter: row => +row.lp_amount > 0
         })
 
-        p.addRows(values)
+        p.addRows(formattedValues)
+        p.addRow({name: 'total', lp_cost: sumDollars(values, "lpCost"), profit: sumDollars(values, "profit")})
 
         console.clear()
         p.printTable()
 
         console.log(" * On PancakeSwap for pairs and CafeSwap for BREW\n")
-
-        console.log(`Total Deposit: \x1b[32m${sumDollars(values, "lp_cost")}\x1b[0m`)
-        console.log(`Total Profit: \x1b[32m${sumDollars(values, "profit")}\x1b[0m`)
-        console.log(`Last Snapshot: \x1b[32m${(new Date).toLocaleTimeString()}\x1b[0m`)
-        console.log("URL: https://bearn.fi/bvaults") // Clickable in most consoles
+        console.log(`Last Snapshot: ${color((new Date).toLocaleTimeString(), 'yellow')}`)
+        console.log(`URL: ${color('https://bearn.fi/bvaults', 'link')}`) // Clickable in most consoles
     }).catch(console.log)
 }
 
