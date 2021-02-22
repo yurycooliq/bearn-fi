@@ -63,7 +63,7 @@ const flashLog = async lpTokensArray => {
         console.log(` Total Deposit: ${sumDollars(values, "lp_cost")}`)
         console.log(`  Total Profit: ${sumDollars(values, "profit")}`)
         console.log(` Last Snapshot: ${(new Date).toLocaleTimeString()}`)
-        console.log("           URL: https://bearn.fi/bvaults") // Clickable in most consoles
+        console.log("\tURL: https://bearn.fi/bvaults") // Clickable in most consoles
     }).catch(console.log)
 }
 
