@@ -20,8 +20,10 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit =
     rawValues.reserves              = await pool.methods.getReserves().call()
     rawValues.amount                = +(await vault.methods.stakedWantTokens(poolID, user).call()) / 1e18
     rawValues.amount                = rawValues.amount < 1 ? 0 : rawValues.amount
+    rawValues.bfiReward             = +(await vault.methods.pendingReward(poolID, 0, user).call()) / 1e18
     rawValues.bdoReward             = +(await vault.methods.pendingReward(poolID, 1, user).call()) / 1e18
-    rawValues.lpTokenPrice          = ((+rawValues.reserves[0] *  rawValues.token1Price) + (+rawValues.reserves[1] * rawValues.token2Price)) / rawValues.totalSupply
+    rawValues.mdoReward             = +(await vault.methods.pendingReward(poolID, 2, user).call()) / 1e18
+    rawValues.lpTokenPrice          = ((+rawValues.reserves[0] * rawValues.token1Price) + (+rawValues.reserves[1] * rawValues.token2Price)) / rawValues.totalSupply
     rawValues.tvl                   = rawValues.lpTokenPrice * rawValues.totalSupply / 1e18
     rawValues.lpCost                = rawValues.amount * rawValues.lpTokenPrice
     rawValues.profit                = rawValues.lpCost - rawValues.deposit

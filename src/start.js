@@ -44,17 +44,19 @@ const flashLog = async lpTokensArray => {
         const p = new Table({
             title: `bEarn.fi Portfolio Tracker for ${process.env.USER_ADDRESS}`,
             columns: [
-                { name: "name",             title: "Pair",                      alignment: "left" ,     },
-                { name: "token1_price",     title: "Token 1 USD | 24h change",  alignment: "right",     },
-                { name: "token2_price",     title: "Token 2 USD | 24h change",  alignment: "right",     },
-                { name: "lp_token_price",   title: "LP token USD",              alignment: "right",     },
+                { name: "name",             title: "Vault",                     alignment: "left" ,     },
+                { name: "token1_price",     title: "Token 1 | 24h change",      alignment: "right",     },
+                { name: "token2_price",     title: "Token 2 | 24h change",      alignment: "right",     },
+                { name: "lp_token_price",   title: "LP Price",                  alignment: "right",     },
                 { name: "TVL",              title: "TVL*",                      alignment: "right",     },
                 { name: "lp_amount",        title: "LP Amount",                 alignment: "right",     },
+                { name: "bfi_reward",       title: "BFI Reward",                alignment: "right",     },
                 { name: "bdo_reward",       title: "BDO Reward",                alignment: "right",     },
-                { name: "lp_cost",          title: "LP Cost",                   alignment: "right",     },
+                { name: "mdo_reward",       title: "MDO Reward",                alignment: "right",     },
+                { name: "lp_cost",          title: "Deposit",                   alignment: "right",     },
                 { name: "profit",           title: "Profit",                    alignment: "right",     }
             ],
-            // filter: row => +row.lp_amount > 0
+            filter: row => +row.lp_amount > 0
         })
 
         p.addRows(formattedValues)

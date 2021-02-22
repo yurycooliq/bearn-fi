@@ -77,6 +77,8 @@ const formatRow = row => {
         formattedRow.TVL            = formatToDollarView(row.tvl),
         formattedRow.lp_amount      = row.amount.toFixed(6),
         formattedRow.bdo_reward     = row.bdoReward.toFixed(6),
+        formattedRow.bfi_reward     = row.bfiReward.toFixed(6),
+        formattedRow.mdo_reward     = row.mdoReward.toFixed(6),
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
     }else{
@@ -87,6 +89,8 @@ const formatRow = row => {
         formattedRow.TVL            = formatToDollarView(row.tvl),
         formattedRow.lp_amount      = row.amount.toFixed(6),
         formattedRow.bdo_reward     = row.bdoReward.toFixed(6),
+        formattedRow.bfi_reward     = row.bfiReward.toFixed(6),
+        formattedRow.mdo_reward     = row.mdoReward.toFixed(6),
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
     }
