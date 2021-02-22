@@ -21,8 +21,8 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit =
     const info = {}
     info.name           = name
     info.lp_token_price = formatToDollarView(lpTokenPrice),
-    info.token1_price   = formatToDollarView(token1Price) + ' || ' +prices[token1ID].usd_24h_change.toFixed(2).padStart(5, ' ') +'%'
-    info.token2_price   = formatToDollarView(token2Price) + ' || ' +prices[token2ID].usd_24h_change.toFixed(2).padStart(5, ' ') +'%'
+    info.token1_price   = formatToDollarView(token1Price) + ' | ' +prices[token1ID].usd_24h_change.toFixed(2).padStart(6, ' ') +'%'
+    info.token2_price   = formatToDollarView(token2Price) + ' | ' +prices[token2ID].usd_24h_change.toFixed(2).padStart(6, ' ') +'%'
     info.TVL            = formatToDollarView(tvl),
     info.lp_amount      = amount.toFixed(6),
     info.bdo_reward     = bdoReward.toFixed(6),
