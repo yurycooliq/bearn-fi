@@ -4,8 +4,6 @@
         "token1ID": "bdollar", 
         "token2ID": "binance-usd", 
         "poolID": 0,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 0, 
         "name": "BDO-BUSD",
         "isSingle": false
     },
@@ -14,8 +12,6 @@
         "token1ID": "bdollar-share", 
         "token2ID": "binance-usd", 
         "poolID": 1,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 0, 
         "name": "SBDO-BUSD",
         "isSingle": false
     },
@@ -24,8 +20,6 @@
         "token1ID": "bdollar", 
         "token2ID": "binancecoin", 
         "poolID": 2,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 18, 
         "name": "BDO-BNB",
         "isSingle": false
     },
@@ -33,7 +27,6 @@
         "poolAddress": "0x790Be81C3cA0e53974bE2688cDb954732C9862e1", 
         "tokenID": "cafeswap-token", 
         "poolID": 3,
-        "priceSource": 1,
         "name": "BREW",
         "isSingle": true
     },
@@ -42,8 +35,6 @@
         "token1ID": "midas-dollar", 
         "token2ID": "binance-usd", 
         "poolID": 4,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 0, 
         "name": "MDO-BUSD",
         "isSingle": false
     },
@@ -52,8 +43,6 @@
         "token1ID": "midas-dollar", 
         "token2ID": "tether", 
         "poolID": 5,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 0, 
         "name": "MDO-USDT",
         "isSingle": false
     },
@@ -62,8 +51,6 @@
         "token1ID": "midas-dollar-share", 
         "token2ID": "binance-usd", 
         "poolID": 6,
-        "token1PriceSource": 0, 
-        "token2PriceSource": 0, 
         "name": "MDS-BUSD",
         "isSingle": false
     }

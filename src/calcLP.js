@@ -1,5 +1,5 @@
 require('dotenv').config({})
-const { formatToDollarView, getPrice } = require('./helpers')
+const { formatToDollarView } = require('./helpers')
 const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const user = process.env.USER_ADDRESS
@@ -21,8 +21,8 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit =
     const info = {}
     info.name           = name
     info.lp_token_price = formatToDollarView(lpTokenPrice),
-    info.token1_price   = formatToDollarView(token1Price)
-    info.token2_price   = formatToDollarView(token2Price)
+    info.token1_price   = formatToDollarView(token1Price) + ' || ' +prices[token1ID].usd_24h_change.toFixed(2) +'%'
+    info.token2_price   = formatToDollarView(token2Price) + ' || ' +prices[token2ID].usd_24h_change.toFixed(2) +'%'
     info.TVL            = formatToDollarView(tvl),
     info.lp_amount      = amount.toFixed(6),
     info.bdo_reward     = bdoReward.toFixed(6),
