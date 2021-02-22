@@ -60,9 +60,9 @@ const flashLog = async lpTokensArray => {
 
         console.log(" * On PancakeSwap for pairs and CafeSwap for BREW\n")
 
-        console.log(` Total Deposit: ${sumDollars(values, "lp_cost")}`)
-        console.log(`  Total Profit: ${sumDollars(values, "profit")}`)
-        console.log(` Last Snapshot: ${(new Date).toLocaleTimeString()}`)
+        console.log(`Total Deposit: ${sumDollars(values, "lp_cost")}`)
+        console.log(`Total Profit: ${sumDollars(values, "profit")}`)
+        console.log(`Last Snapshot: ${(new Date).toLocaleTimeString()}`)
         console.log("\tURL: https://bearn.fi/bvaults") // Clickable in most consoles
     }).catch(console.log)
 }

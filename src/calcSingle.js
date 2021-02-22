@@ -18,7 +18,7 @@ module.exports = async (poolAddress, tokenID, poolID, name, deposit = 0, prices)
     const info = {}
     info.name           = name
     info.lp_token_price = formatToDollarView(tokenPrice),
-    info.token1_price   = formatToDollarView(tokenPrice) + ' || ' +prices[tokenID].usd_24h_change.toFixed(2) +'%'
+    info.token1_price   = formatToDollarView(tokenPrice) + ' || ' +prices[tokenID].usd_24h_change.toFixed(2).padStart(5, ' ') +'%'
     info.token2_price   = ""
     info.TVL            = formatToDollarView(tvl),
     info.lp_amount      = amount.toFixed(6),
