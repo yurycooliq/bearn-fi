@@ -1,5 +1,5 @@
 const Table = require("console-table-printer").Table
-const { sumDollars, updatePrices, color, formatToDollarView, formatRow } = require('./helpers')
+const { sumDollars, updatePrices, color, formatRow } = require('./helpers')
 const calcLP = require('./calcLP')
 const calcSingle = require('./calcSingle')
 const watchList = require('./watchList')
@@ -56,7 +56,7 @@ const flashLog = async lpTokensArray => {
                 { name: "lp_cost",          title: "Deposit",                   alignment: "right",     },
                 { name: "profit",           title: "Profit",                    alignment: "right",     }
             ],
-            filter: row => +row.lp_amount > 0
+            // filter: row => +row.lp_amount > 0
         })
 
         p.addRows(formattedValues)
