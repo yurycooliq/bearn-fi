@@ -3,7 +3,7 @@ const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const user = process.env.USER_ADDRESS
 
-module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit = 0, prices, totals) => {
+module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit = 0, prices, apys) => {
     const pool = new web3.eth.Contract(require('./abis/pool.json'), poolAddress, web3)
     const vault = new web3.eth.Contract(require('./abis/vault.json'), "0xB390B07fcF76678089cb12d8E615d5Fe494b01Fb", web3)
 
@@ -26,6 +26,7 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit =
     rawValues.tvl                   = rawValues.lpTokenPrice * rawValues.totalSupply / 1e18
     rawValues.lpCost                = rawValues.amount * rawValues.lpTokenPrice
     rawValues.profit                = rawValues.lpCost - rawValues.deposit
+    rawValues.apy                   = apys[poolID]
 
     return rawValues
 }

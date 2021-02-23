@@ -79,6 +79,7 @@ const formatRow = row => {
         formattedRow.mdo_reward     = row.mdoReward.toFixed(6),
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
+        formattedRow.apyDaily       = formatToPercentageWiew(row.apy)
     }else{
         formattedRow.name           = color(row.name, 'cyan')
         formattedRow.token1_price   = formatToDollarView(row.token1Price) + ' | ' + formatToPercentageWiew(row.token1Usd24hChange)
@@ -91,9 +92,20 @@ const formatRow = row => {
         formattedRow.mdo_reward     = row.mdoReward.toFixed(6),
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
+        formattedRow.apyDaily       = formatToPercentageWiew(row.apy)
     }
 
     return formattedRow
+}
+
+const getApy = async () => {
+    const responce = await get(`https://api.bdollar.fi/api/bvault/get-vaults`)
+    const vaults = responce.data.data.vaultInfos
+    const apys = {}
+    for (const pool in vaults){
+        apys[vaults[pool].pid] = vaults[pool].apyDaily
+    }
+    return apys
 }
 
 module.exports = {
@@ -103,7 +115,8 @@ module.exports = {
     sumDollars: sumDollars,
     updatePrices: updatePrices,
     color:color,
-    formatRow: formatRow
+    formatRow: formatRow,
+    getApy: getApy
 }
 
 

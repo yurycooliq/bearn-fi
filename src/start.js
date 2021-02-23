@@ -1,5 +1,5 @@
 const Table = require("console-table-printer").Table
-const { sumDollars, updatePrices, color, formatRow } = require('./helpers')
+const { sumDollars, updatePrices, color, formatRow, getApy } = require('./helpers')
 const calcLP = require('./calcLP')
 const calcSingle = require('./calcSingle')
 const watchList = require('./watchList')
@@ -12,7 +12,7 @@ const main = async () => {
 
 const flashLog = async lpTokensArray => {
     const prices = await updatePrices(lpTokensArray)
-    const totals = {}
+    const apys = await getApy()
 
     const promises = lpTokensArray.map(tokenInfo => {
         const deposit = balances.find(balance => balance.name === tokenInfo.name)
@@ -24,7 +24,7 @@ const flashLog = async lpTokensArray => {
                 tokenInfo.name,
                 deposit.balance,
                 prices.data,
-                totals
+                apys
             )
         }
         return calcLP(
@@ -35,7 +35,7 @@ const flashLog = async lpTokensArray => {
             tokenInfo.name,
             deposit.balance,
             prices.data,
-            totals
+            apys
         ).catch(console.error)
     })
 
@@ -49,6 +49,7 @@ const flashLog = async lpTokensArray => {
                 { name: "token2_price",     title: "Token 2 | 24h change",      alignment: "right",     },
                 { name: "lp_token_price",   title: "LP Price",                  alignment: "right",     },
                 { name: "TVL",              title: "TVL*",                      alignment: "right",     },
+                { name: "apyDaily",              title: "daily apy",            alignment: "right",     },
                 { name: "lp_amount",        title: "LP Amount",                 alignment: "right",     },
                 { name: "bfi_reward",       title: "BFI Reward",                alignment: "right",     },
                 { name: "bdo_reward",       title: "BDO Reward",                alignment: "right",     },
