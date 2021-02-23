@@ -53,5 +53,12 @@
         "poolID": 6,
         "name": "MDS-BUSD",
         "isSingle": false
+    },
+    { 
+        "poolAddress": "0x4F47A0d15c1E53F3d94c069C7D16977c29F9CB6B", 
+        "tokenID": "ramenswap", 
+        "poolID": 7,
+        "name": "RAMEN",
+        "isSingle": true
     }
 ]

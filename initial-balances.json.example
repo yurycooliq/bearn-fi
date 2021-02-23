@@ -26,5 +26,9 @@
     {
         "name": "BREW",
         "balance": 0
+    },
+    {
+        "name": "RAMEN",
+        "balance": 0
     }
 ]

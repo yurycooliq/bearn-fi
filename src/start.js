@@ -7,7 +7,7 @@ const balances = require('./../initial-balances')
 
 const main = async () => {
     flashLog(watchList)
-    setInterval(() => flashLog(watchList), 3000)
+    setInterval(() => flashLog(watchList), 5000)
 }
 
 const flashLog = async lpTokensArray => {
