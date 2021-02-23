@@ -31,7 +31,7 @@ Available pools:
 - MDO-BUSD
 - MDS-BUSD
 - BREW
-- RAMEN (coming soon)
+- RAMEN
 
 Example output:
 ```
