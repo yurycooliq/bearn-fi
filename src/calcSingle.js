@@ -1,5 +1,4 @@
 require('dotenv').config({})
-const { formatToDollarView, formatToPercentageWiew, color } = require('./helpers')
 const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const user = process.env.USER_ADDRESS
@@ -23,17 +22,5 @@ module.exports = async (poolAddress, tokenID, poolID, name, deposit = 0, prices,
     rawValues.lpCost                = rawValues.amount * rawValues.tokenPrice
     rawValues.profit                = rawValues.lpCost - rawValues.deposit
 
-    /*
-    const info = {}
-    info.name           = color(name, 'cyan')
-    info.lp_token_price = formatToDollarView(tokenPrice),
-    info.token1_price   = formatToDollarView(tokenPrice) + ' | ' + formatToPercentageWiew(prices[tokenID].usd_24h_change)
-    info.token2_price   = ""
-    info.TVL            = formatToDollarView(tvl),
-    info.lp_amount      = amount.toFixed(6),
-    info.bdo_reward     = bdoReward.toFixed(6),
-    info.lp_cost        = formatToDollarView(lpCost),
-    info.profit         = formatToDollarView(lpCost - deposit) 
-*/
     return rawValues
 }

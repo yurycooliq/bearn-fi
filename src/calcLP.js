@@ -1,5 +1,4 @@
 require('dotenv').config({})
-const { formatToDollarView, formatToPercentageWiew, color } = require('./helpers')
 const Web3 = require('web3')
 const web3 = new Web3(process.env.BSC_RPC)
 const user = process.env.USER_ADDRESS

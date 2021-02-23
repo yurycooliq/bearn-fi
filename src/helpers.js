@@ -26,8 +26,6 @@ const sumDollars = (values, needle) => {
 }
 
 const updatePrices = watchList => {
-    // return price && price.data.tickers[priceSource].converted_last.usd
-    
     const ids = {}
     watchList.forEach( lpInfo => {
         ids[lpInfo.token1ID] = undefined
@@ -63,9 +61,9 @@ const color = (str, color = 'white') => {
 }
 
 const floorFigure = (figure, decimals) => {
-    if (!decimals) decimals = 2;
-    var d = Math.pow(10,decimals);
-    return (parseInt(figure*d)/d).toFixed(decimals);
+    if (!decimals) decimals = 2
+    var d = Math.pow(10,decimals)
+    return (parseInt(figure*d)/d).toFixed(decimals)
 }
 
 const formatRow = row => {
