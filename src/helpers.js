@@ -25,6 +25,11 @@ const sumDollars = (values, needle) => {
     return formatToDollarView(sum.reduce((a, b) => a + b, 0))
 }
 
+const summ = (values, needle) => {
+    const sum = values.map(value =>  value[needle])
+    return sum.reduce((a, b) => a + b, 0).toFixed(6)
+}
+
 const updatePrices = watchList => {
     const ids = {}
     watchList.forEach( lpInfo => {
@@ -116,7 +121,8 @@ module.exports = {
     updatePrices: updatePrices,
     color:color,
     formatRow: formatRow,
-    getApy: getApy
+    getApy: getApy,
+    summ: summ
 }
 
 
