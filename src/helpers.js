@@ -37,6 +37,10 @@ const updatePrices = watchList => {
         ids[lpInfo.token2ID] = undefined
         ids[lpInfo.tokenID] = undefined
     })
+
+    ids['midas-dollar'] = undefined
+    ids['bdollar'] = undefined
+    ids['bearn-fi'] = undefined
     
     let ids_string = ''
     Object.keys(ids).forEach( key => {
@@ -85,6 +89,7 @@ const formatRow = row => {
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
         formattedRow.apyDaily       = formatToPercentageWiew(row.apy)
+        formattedRow.rewards_profit = formatToDollarView(row.rewardsProfit)
     }else{
         formattedRow.name           = color(row.name, 'cyan')
         formattedRow.token1_price   = formatToDollarView(row.token1Price) + ' | ' + formatToPercentageWiew(row.token1Usd24hChange)
@@ -98,6 +103,7 @@ const formatRow = row => {
         formattedRow.lp_cost        = formatToDollarView(row.lpCost),
         formattedRow.profit         = formatToDollarView(row.lpCost - row.deposit)
         formattedRow.apyDaily       = formatToPercentageWiew(row.apy)
+        formattedRow.rewards_profit = formatToDollarView(row.rewardsProfit)
     }
 
     return formattedRow

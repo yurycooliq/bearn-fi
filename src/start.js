@@ -51,23 +51,26 @@ const flashLog = async lpTokensArray => {
                 { name: "TVL",              title: "TVL*",                      alignment: "right"},
                 { name: "apyDaily",         title: "daily apy",                 alignment: "right"},
                 { name: "lp_amount",        title: "LP Amount",                 alignment: "right"},
+                { name: "lp_cost",          title: "Deposit",                   alignment: "right"},
+                { name: "profit",           title: "Profit",                    alignment: "right"},
                 { name: "bfi_reward",       title: "BFI Reward",                alignment: "right"},
                 { name: "bdo_reward",       title: "BDO Reward",                alignment: "right"},
                 { name: "mdo_reward",       title: "MDO Reward",                alignment: "right"},
-                { name: "lp_cost",          title: "Deposit",                   alignment: "right"},
-                { name: "profit",           title: "Profit",                    alignment: "right"}
+                { name: "rewards_profit",   title: "rewards",                   alignment: "right"}
             ],
             // filter: row => +row.lp_amount > 0
         })
 
         p.addRows(formattedValues)
+        p.addRow({})
         p.addRow({
             name: 'total', 
             bfi_reward: summ(values, "bfiReward"),
             bdo_reward: summ(values, "bdoReward"),
             mdo_reward: summ(values, "mdoReward"),
             lp_cost: sumDollars(values, "lpCost"), 
-            profit: sumDollars(values, "profit")
+            profit: sumDollars(values, "profit"),
+            rewards_profit: sumDollars(values, "rewardsProfit")
         })
 
         console.clear()

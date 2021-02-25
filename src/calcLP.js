@@ -27,6 +27,9 @@ module.exports = async (poolAddress, token1ID, token2ID, poolID, name, deposit =
     rawValues.lpCost                = rawValues.amount * rawValues.lpTokenPrice
     rawValues.profit                = rawValues.lpCost - rawValues.deposit
     rawValues.apy                   = apys[poolID]
+    rawValues.rewardsProfit        =          rawValues.bfiReward * prices['bearn-fi'].usd  
+                                            + rawValues.bdoReward * prices['bdollar'].usd  
+                                            + rawValues.mdoReward * prices['midas-dollar'].usd
 
     return rawValues
 }
