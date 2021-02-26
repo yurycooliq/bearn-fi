@@ -45,11 +45,11 @@ const flashLog = async lpTokensArray => {
             title: `bEarn.fi Portfolio Tracker for ${process.env.USER_ADDRESS.slice(0,6)}...${process.env.USER_ADDRESS.slice(-4)}`,
             columns: [
                 { name: "name",             title: "Vault",                     alignment: "left" },
-                { name: "token1_price",     title: "Token 1 | 24h change",      alignment: "right"},
-                { name: "token2_price",     title: "Token 2 | 24h change",      alignment: "right"},
+                { name: "token1_price",     title: "Token 1*",                  alignment: "right"},
+                { name: "token2_price",     title: "Token 2*",                  alignment: "right"},
                 { name: "lp_token_price",   title: "LP Price",                  alignment: "right"},
-                { name: "TVL",              title: "TVL*",                      alignment: "right"},
-                { name: "apyDaily",         title: "daily apy",                 alignment: "right"},
+                { name: "TVL",              title: "TVL**",                     alignment: "right"},
+                { name: "apyDaily",         title: "apy***",                    alignment: "right"},
                 { name: "lp_amount",        title: "LP Amount",                 alignment: "right"},
                 { name: "lp_cost",          title: "Deposit",                   alignment: "right"},
                 { name: "profit",           title: "Profit",                    alignment: "right"},
@@ -76,7 +76,9 @@ const flashLog = async lpTokensArray => {
         console.clear()
         p.printTable()
 
-        console.log(" * On PancakeSwap for pairs and CafeSwap for BREW\n")
+        console.log(" * Token current price | 24h change")
+        console.log(" ** On PancakeSwap for pairs and CafeSwap for BREW")
+        console.log(" *** daily\n")
         console.log(`Last Snapshot: ${color((new Date).toLocaleTimeString(), 'yellow')}`)
         console.log(`URL: ${color('https://bearn.fi/bvaults', 'link')}`) // Clickable in most consoles
     }).catch(console.log)
