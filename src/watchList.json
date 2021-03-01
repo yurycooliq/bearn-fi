@@ -60,5 +60,21 @@
         "poolID": 7,
         "name": "RAMEN",
         "isSingle": true
+    },
+    { 
+        "poolAddress": "0x8DD39f0a49160cDa5ef1E2a2fA7396EEc7DA8267", 
+        "token1ID": "vbswap", 
+        "token2ID": "binancecoin", 
+        "poolID": 10,
+        "name": "vBSWAP-BNB",
+        "isSingle": false
+    },
+    { 
+        "poolAddress": "0xC99E3abe7729a3869d5cAd631bcbB90e3d389AA2", 
+        "token1ID": "vbswap", 
+        "token2ID": "binance-usd", 
+        "poolID": 11,
+        "name": "vBSWAP-BUSD_98/2",
+        "isSingle": false
     }
 ]

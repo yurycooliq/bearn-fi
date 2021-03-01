@@ -48,8 +48,8 @@ const flashLog = async lpTokensArray => {
                 { name: "token1_price",     title: "Token 1*",                  alignment: "right"},
                 { name: "token2_price",     title: "Token 2*",                  alignment: "right"},
                 { name: "lp_token_price",   title: "LP Price",                  alignment: "right"},
-                { name: "TVL",              title: "TVL**",                     alignment: "right"},
-                { name: "apyDaily",         title: "apy***",                    alignment: "right"},
+                { name: "TVL",              title: "TVL",                     alignment: "right"},
+                { name: "apyDaily",         title: "apy",                    alignment: "right"},
                 { name: "lp_amount",        title: "LP Amount",                 alignment: "right"},
                 { name: "lp_cost",          title: "Deposit",                   alignment: "right"},
                 { name: "profit",           title: "Profit",                    alignment: "right"},
@@ -76,9 +76,9 @@ const flashLog = async lpTokensArray => {
         console.clear()
         p.printTable()
 
-        console.log(" * Token current price | 24h change")
-        console.log(" ** On PancakeSwap for pairs and CafeSwap for BREW")
-        console.log(" *** daily\n")
+        console.log("*Token current price and 24h change")
+        console.log("Tvl on PancakeSwap for pairs and CafeSwap for BREW")
+        console.log("Daily apy getted from bearn.fi\n")
         console.log(`Last Snapshot: ${color((new Date).toLocaleTimeString(), 'yellow')}`)
         console.log(`URL: ${color('https://bearn.fi/bvaults', 'link')}`) // Clickable in most consoles
     }).catch(console.log)
