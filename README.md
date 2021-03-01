@@ -32,6 +32,8 @@ Available pools:
 - MDS-BUSD
 - BREW
 - RAMEN
+- vBSWAP-BNB
+- vBSWAP-BUSD_98/2
 
 Example output:
 ```
