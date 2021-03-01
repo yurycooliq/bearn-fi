@@ -30,5 +30,13 @@
     {
         "name": "RAMEN",
         "balance": 0
+    },
+    {
+        "name": "vBSWAP-BNB",
+        "balance": 0
+    },
+    {
+        "name": "vBSWAP-BUSD_98/2",
+        "balance": 0
     }
 ]
