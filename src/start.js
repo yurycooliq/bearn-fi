@@ -55,7 +55,7 @@ const flashLog = async lpTokensArray => {
                 { name: "profit",           title: "Profit",                    alignment: "right"},
                 { name: "bfi_reward",       title: "BFI Reward",                alignment: "right"},
                 { name: "bdo_reward",       title: "BDO Reward",                alignment: "right"},
-                { name: "mdo_reward",       title: "MDO Reward",                alignment: "right"},
+                // { name: "mdo_reward",       title: "MDO Reward",                alignment: "right"},
                 { name: "rewards_profit",   title: "rewards",                   alignment: "right"}
             ],
             // filter: row => +row.lp_amount > 0
