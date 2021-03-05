@@ -38,5 +38,13 @@
     {
         "name": "vBSWAP-BUSD_98/2",
         "balance": 0
+    },
+    {
+        "name": "[!]BUSD(alpaca)",
+        "balance": 0
+    },
+    {
+        "name": "[!]ALPACA-BNB",
+        "balance": 0
     }
 ]

@@ -34,6 +34,8 @@ Available pools:
 - RAMEN
 - vBSWAP-BNB
 - vBSWAP-BUSD_98/2
+- BUSD(alpaca)
+- ALPACA-BNB
 
 Example output:
 ```
